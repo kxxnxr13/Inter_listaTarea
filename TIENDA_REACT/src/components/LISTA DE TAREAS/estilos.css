@@ -1,75 +1,49 @@
-/* App.css */
 
-/* Estilos generales */
+/* Estilo general */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
-}
-
-h2 {
-    color: #3b5674;
-    font-weight: 700;
-    font-size: 24px;
-    text-align: center;
-}
-
-/* Contenedor de la lista de tareas */
-.lista-tareas {
-    width: 100%;
-    max-width: 100%;
-    background-color: #f0d7d7;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px 10px rgba(7, 2, 2, 0.1);
-}
-
-/* Estilos para cada tarea */
-.item-tarea {
+    padding: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Formulario de agregar tarea */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input[type="text"] {
+    flex: 1;
     padding: 10px;
-    margin: 5px 20px ;
-    border-bottom: 1px solid #664f4f;
-    transition: background-color 0.3s ease;
-}
-
-.item-tarea:hover {
-    background-color: #446688;
-}
-
-.completada {
-    text-decoration: line-through;
-    color: #0453e4;
-}
-
-/* Estilos para el campo de entrada */
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
+    border: 2px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #850606;
-    transition: border 0.3s;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
+form input[type="text"]:focus {
+    border-color: #4a90e2;
     outline: none;
-    border-color: #660606;
 }
 
-/* Botón Agregar */
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+form button {
     background-color: #4a90e2;
-    color: #1d1d0c;
+    color: #fff;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -77,39 +51,59 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-    background-color: #026428;
+form button:hover {
+    background-color: #357abd;
 }
 
-/* Botón Eliminar */
-.boton-eliminar {
-    padding: 6px 10px;
-    font-size: 12px;
-    background-color: #e74c3c;
-    color: #240303;
-    border: none;
+/* Lista de tareas */
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.boton-eliminar:hover {
-    background-color: #c0392b;
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Checkbox */
-input[type="checkbox"] {
+li input[type="checkbox"] {
     cursor: pointer;
     transform: scale(1.2);
 }
 
-/* Mensaje cuando no hay tareas */
-.lista-tareas p {
-    color: #a50b0b;
-    text-align: center;
-    font-size: 14px;
+/* Texto de la tarea */
+li span {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
+li span[style*="line-through"] {
+    color: #888;
+}
 
+/* Botón de eliminar */
+li button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-
+li button:hover {
+    background-color: #c0392b;
+}
